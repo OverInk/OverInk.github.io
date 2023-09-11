@@ -1,7 +1,22 @@
 .logo {
 	font-weight: 600;
 	font-size: 20px;
+}
 
+ul.nav {
+	float: right;
+	list-style: none;
+}
+
+ul.nav li {
+	display: inline;
+	margin-left: 25px;
+	cursor: pointer;
+	transition: opacity 500ms ease;
+}
+
+ul.nav li:hover {
+	opacity: 0.5;
 }
 .presentation{
 	margin: 50px 0;
@@ -11,8 +26,29 @@
 	background-size: cover;
 	background-position: center;
 	background-blend-mode: multiply ;
-	background-color: white;
+	background-color: rgb(96, 96, 198);
+	position:relative;
+}
 
+.presentation::after {
+	content:'The best games for ur';
+	position:absolute;
+	top:180px;
+	left: 50px;
+	width: 300px;
+	font-size: 30px;
+	font-weight: 600;
+	color: white;
+}
+.presentation::before {
+	content:'at very high prices';
+	position:absolute;
+	top:220px;
+	left: 400px;
+	width: 300px;
+	font-size: 20px;
+	font-weight: 600;
+	color: white;
 }
 
 span {
