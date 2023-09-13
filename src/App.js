@@ -23,7 +23,7 @@ class App extends React.Component {
 				{
 					id: 2,
 					title: 'The Last of Us',
-					img: 'TLofU.jpg',
+					img: 'TLofU.jpeg',
 					desc: 'Just WOW, the best game let`s gooooo, or loser?',
 					category: 'life',
 					price: '150k',
