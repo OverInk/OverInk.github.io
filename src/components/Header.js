@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import cl from './style.css';
+import { FaLuggageCart } from "react-icons/fa";
 
 export default function Header() {
+	let [cardOpen, setCardOpen] = useState(false);
+
 	return (
 		<header>
 			<div>
@@ -11,6 +14,7 @@ export default function Header() {
 						<li>Contankts</li>
 						<li>KabiNET</li>
 					</ul>
+					<FaLuggageCart onClick={() => setCardOpen(cardOpen = !cardOpen)} className='shop-card-button' />
 				</div>
 			</div>
 			<div className='presentation'></div>

@@ -18,6 +18,16 @@ ul.nav li {
 ul.nav li:hover {
 	opacity: 0.5;
 }
+
+.shop-card-button {
+	float: right;
+	cursor: pointer;
+	transition: color 500ms ease;
+}
+.shop-card-button:hover,
+.shop-card-button.active {
+	color: blue;
+}
 .presentation{
 	margin: 50px 0;
 	background: url('./../img/RezEvil.jpg');
@@ -87,7 +97,7 @@ b {
 	position: absolute;
 	right: 20px;
 	bottom:20px;
-	background: red;
+	background: rgb(216, 15, 15);
 	width: 35px;
 	height: 35px;
 	text-align: center;
