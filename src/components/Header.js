@@ -14,7 +14,13 @@ export default function Header() {
 						<li>Contankts</li>
 						<li>KabiNET</li>
 					</ul>
-					<FaLuggageCart onClick={() => setCardOpen(cardOpen = !cardOpen)} className='shop-card-button' />
+					<FaLuggageCart onClick={() => setCardOpen(cardOpen = !cardOpen)} className={`shop-card-button ${cardOpen && 'active'}`} />
+
+
+					{cardOpen && (
+						<div className='shop-card'> 
+						</div>
+					)}
 				</div>
 			</div>
 			<div className='presentation'></div>
