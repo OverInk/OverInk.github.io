@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import cl from './style.css';
 import { FaLuggageCart } from "react-icons/fa";
+import Order from './Order';
 
-export default function Header() {
+export default function Header(props) {
 	let [cardOpen, setCardOpen] = useState(false);
 
 	return (
@@ -18,7 +19,10 @@ export default function Header() {
 
 
 					{cardOpen && (
-						<div className='shop-card'> 
+						<div className='shop-card'>
+							{props.orders.map(elem => (
+								<Order key={elem.id} item={elem} />
+							))}
 						</div>
 					)}
 				</div>
