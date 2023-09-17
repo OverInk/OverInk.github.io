@@ -3,6 +3,24 @@ import cl from './style.css';
 import { FaLuggageCart } from "react-icons/fa";
 import Order from './Order';
 
+const showOrder = (props) => {
+	return(
+		<div>
+			{props.orders.map(elem => (
+				<Order key={elem.id} item={elem} />
+			))}
+		</div>
+	)
+}
+
+const showNothing =() => {
+	return(
+		<div className='empty'>
+			<h2>Tovar ne naiden</h2>
+		</div>
+	)
+}
+
 export default function Header(props) {
 	let [cardOpen, setCardOpen] = useState(false);
 
@@ -20,9 +38,9 @@ export default function Header(props) {
 
 					{cardOpen && (
 						<div className='shop-card'>
-							{props.orders.map(elem => (
-								<Order key={elem.id} item={elem} />
-							))}
+							{props.orders.length > 0 ?
+								showOrder(props) : showNothing()
+							}
 						</div>
 					)}
 				</div>
