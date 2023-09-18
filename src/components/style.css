@@ -62,10 +62,31 @@ ul.nav li:hover {
 	margin-bottom: 10px;
 	font-weight: 600;
 }
-
 .shop-card .item b {
 	color: grey;
 }
+
+.shop-card .item .delete-icon {
+	color:red;
+	float: right;
+	position:relative;
+	top: - 25px;
+	cursor:pointer;
+	transition: color, transform 500ms ease;
+}
+.shop-card .item .delete-icon:hover{
+	color: rgb(78, 34, 34);
+	transform: scale(1.5);
+}
+
+.shop-card .summa {
+	float: left;
+	width: 100%;
+	font-weight: 600;
+	font-size: 17px;
+	margin-bottom: 15px;
+}
+
 .presentation{
 	margin: 50px 0;
 	background: url('./../img/RezEvil.jpg');

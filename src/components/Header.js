@@ -4,17 +4,21 @@ import { FaLuggageCart } from "react-icons/fa";
 import Order from './Order';
 
 const showOrder = (props) => {
-	return(
+	let summa = 0;
+	props.orders.forEach(el => summa += Number.parseFloat(el.price))
+
+	return (
 		<div>
 			{props.orders.map(elem => (
-				<Order key={elem.id} item={elem} />
+				<Order onDelete={props.onDelete} key={elem.id} item={elem} />
 			))}
+			<p className='summa'>Syma: {new Intl.NumberFormat().format(summa)}$</p>
 		</div>
 	)
 }
 
-const showNothing =() => {
-	return(
+const showNothing = () => {
+	return (
 		<div className='empty'>
 			<h2>Tovar ne naiden</h2>
 		</div>
