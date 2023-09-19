@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import './index.css';
 import Items from './components/Items';
+import Categories from './components/Categories';
 
 
 
@@ -18,7 +19,7 @@ class App extends React.Component {
 					title: 'GTA',
 					img: 'gta.jpg',
 					desc: 'Just WOW, the best game let`s gooooo, or loser?',
-					category: 'life',
+					category: 'nolife',
 					price: '100k',
 				},
 				{
@@ -26,7 +27,7 @@ class App extends React.Component {
 					title: 'The Last of Us',
 					img: 'TLofU.jpeg',
 					desc: 'Just WOW, the best game let`s gooooo, or loser?',
-					category: 'life',
+					category: 'nolife',
 					price: '150k',
 				},
 				{
@@ -34,7 +35,7 @@ class App extends React.Component {
 					title: 'The Witcher',
 					img: 'widmak.jpg',
 					desc: 'Just WOW, the best game let`s gooooo, or loser?',
-					category: 'life',
+					category: 'nomoney',
 					price: '200k',
 				},
 				{
@@ -42,7 +43,7 @@ class App extends React.Component {
 					title: 'God of War',
 					img: 'godwar.jpg',
 					desc: 'Just WOW, the best game let`s gooooo, or loser?',
-					category: 'life',
+					category: 'time for war',
 					price: '170k',
 				},
 				{
@@ -63,6 +64,8 @@ class App extends React.Component {
 		return (
 			<div className="wrapper">
 				<Header orders={this.state.orders} onDelete={this.deleteOrder} />
+
+				<Categories />
 
 				<Items items={this.state.items} onAdd={this.addTooOrder} />
 
