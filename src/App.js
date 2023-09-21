@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import './index.css';
 import Items from './components/Items';
 import Categories from './components/Categories';
+import Showfullitem2 from './components/Showfullitem2';
 
 
 
@@ -58,13 +59,18 @@ class App extends React.Component {
 					price: '10k',
 				},
 
-			]
+			],
+
+			showFullItem: false,
+
+			fullItem: {},
 		}
 
 		this.state.currentItems = this.state.items
 		this.addTooOrder = this.addTooOrder.bind(this)
 		this.deleteOrder = this.deleteOrder.bind(this)
 		this.chooseCategory = this.chooseCategory.bind(this)
+		this.onShowItem = this.onShowItem.bind(this)
 	}
 	render() {
 		return (
@@ -73,11 +79,18 @@ class App extends React.Component {
 
 				<Categories chooseCategory={this.chooseCategory} />
 
-				<Items items={this.state.currentItems} onAdd={this.addTooOrder} />
+				<Items onShowItem={this.onShowItem} items={this.state.currentItems} onAdd={this.addTooOrder} />
+
+				{this.state.showFullItem && <Showfullitem2 item={this.state.fullItem} />}
 
 				<Footer />
 			</div>
 		)
+	}
+
+	onShowItem(item) {
+		this.setState({ fullItem: item })
+		this.setState({ showFullItem: !this.state.showFullItem })
 	}
 
 
