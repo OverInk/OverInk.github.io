@@ -81,7 +81,7 @@ class App extends React.Component {
 
 				<Items onShowItem={this.onShowItem} items={this.state.currentItems} onAdd={this.addTooOrder} />
 
-				{this.state.showFullItem && <Showfullitem2 item={this.state.fullItem} />}
+				{this.state.showFullItem && <Showfullitem2 onShowItem={this.onShowItem} onAdd={this.addTooOrder} item={this.state.fullItem} />}
 
 				<Footer />
 			</div>
