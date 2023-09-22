@@ -6,6 +6,11 @@ import Items from './components/Items';
 import Categories from './components/Categories';
 import Showfullitem2 from './components/Showfullitem2';
 
+import Contacts from './pages/Contacts';
+
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './utils/ScrollToTop';
 
 
 
@@ -75,15 +80,27 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="wrapper">
-				<Header orders={this.state.orders} onDelete={this.deleteOrder} />
 
-				<Categories chooseCategory={this.chooseCategory} />
+				<Router>
 
-				<Items onShowItem={this.onShowItem} items={this.state.currentItems} onAdd={this.addTooOrder} />
+					<ScrollToTop />
+					<Header orders={this.state.orders} onDelete={this.deleteOrder} />
 
-				{this.state.showFullItem && <Showfullitem2 onShowItem={this.onShowItem} onAdd={this.addTooOrder} item={this.state.fullItem} />}
+					<Categories chooseCategory={this.chooseCategory} />
 
-				<Footer />
+					<Items onShowItem={this.onShowItem} items={this.state.currentItems} onAdd={this.addTooOrder} />
+
+					{this.state.showFullItem && <Showfullitem2 onShowItem={this.onShowItem} onAdd={this.addTooOrder} item={this.state.fullItem} />}
+
+					<Routes>
+						<Route path='/contacts' element={<Contacts />} />
+					</Routes>
+
+
+					<Footer />
+
+
+				</Router>
 			</div>
 		)
 	}
