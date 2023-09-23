@@ -31,7 +31,7 @@ export default function Header(props) {
 	return (
 		<header>
 			<div>
-				<div className='logo'>Home Staff <span className='new-font'>Off</span>
+				<div className='logo'>GAME Staff <span className='new-font'>Off</span>
 					<ul className='nav'>
 						<li>NO about yourself</li>
 						<li>Contankts</li>

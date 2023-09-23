@@ -86,14 +86,16 @@ class App extends React.Component {
 					<ScrollToTop />
 					<Header orders={this.state.orders} onDelete={this.deleteOrder} />
 
-					<Categories chooseCategory={this.chooseCategory} />
-
-					<Items onShowItem={this.onShowItem} items={this.state.currentItems} onAdd={this.addTooOrder} />
-
 					{this.state.showFullItem && <Showfullitem2 onShowItem={this.onShowItem} onAdd={this.addTooOrder} item={this.state.fullItem} />}
 
 					<Routes>
 						<Route path='/contacts' element={<Contacts />} />
+
+						<Route path='/categor' element={<Items onShowItem={this.onShowItem} items={this.state.currentItems} onAdd={this.addTooOrder} />} />
+
+						{/* <Route path='/categor1' element={<Categories chooseCategory={this.chooseCategory} />} /> */}
+
+
 					</Routes>
 
 
